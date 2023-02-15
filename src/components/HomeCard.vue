@@ -2,7 +2,7 @@
 import { toRefs } from "vue"
 import { RouterLink } from "vue-router";
 
-props = defineProps({
+const props = defineProps({
   image: String,
   title: String,
   subTitle:String
@@ -14,6 +14,8 @@ const { image, title, subTitle } = toRefs(props)
   <RouterLink to="library">
     <div class="bg-[#111111] p-4 rounded-md m-2 hover:bg-[#252525] cursor-pointer">
         <img :src="image" class="rounded-md">
+        <div class="text-white pt-4 font-semibold text-lg">{{ title }}</div>
+        <div class="text-gray-400 pt-1 pb-4 text-sm">{{ subTitle }}</div>
     </div>
   </RouterLink>
 </template>
