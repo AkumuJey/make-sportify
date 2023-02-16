@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .circle {
+      @apply w-1 h-1 bg-[rgb(189,189,189)] rounded-full
+    }
+  }
