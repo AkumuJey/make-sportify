@@ -4,6 +4,14 @@ import Play from 'vue-material-design-icons/Play.vue'
 import Pause from 'vue-material-design-icons/Pause.vue'
 import Heart from 'vue-material-design-icons/Heart.vue'
 
+///Imports from pinia store
+import { useSongStore } from '../stores/song'
+import { storeToRefs } from 'pinia'
+const useSong = useSongStore()
+
+const { isPlaying, currentTrack } = storeToRefs(useSong)
+
+
 
 let isHover = ref(false)
 const hoverStyle = ref({'text-white': isHover})
@@ -32,8 +40,19 @@ onMounted(() => {
   >
     <div class="flex items-center w-full py-1.5">
         <div v-if="isHover" class="w-10 ml-[14px] mr-[6px] cursor-pointer">
-            <Play v-if="true" class="text-white" :size="25"/>
-            <Pause v-else class="text-white" :size="25"/>
+            <Play 
+                v-if="isPlaying"
+                class="text-white"
+                :size="25"
+                @click="useSong.playOrPauseThisSong(artist, track)"
+            />
+            <Play 
+                v-if="isPlaying && currentTrack.name === name"
+                class="text-white"
+                :size="25"
+                @click="useSong.loadSong(artist, track)"
+            />
+            <Pause v-else class="text-white" :size="25" @click="useSong.playOrPauseSong()"/>
         </div>
         <div v-else class="text-white font-semibold w-10 ml-5">
             <span class="">
