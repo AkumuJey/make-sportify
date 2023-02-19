@@ -45,14 +45,14 @@
             </div>
 
             <button @click="openMenu = !openMenu" :class="openMenu ? 'bg-[#282828]' : 'bg-black'"
-                class="bg-black hover:bg-[#282828] rounded-full p-0.5 mr-8 mt-0.5 cursor-pointer">
+                class="bg-black hover:bg-[#282828] rounded-full p-1 mr-8 mt-0.5 cursor-pointer">
                 <div class="flex items-center">
                     <img 
-                      class="rounded-full" 
+                      class="rounded-full m-0.5" 
                       width="27"
-                      src="https://yt3.ggpht.com/e9o-24_frmNSSVvjS47rT8qCHgsHNiedqgXbzmrmpsj6H1ketcufR1B9vLXTZRa30krRksPj=s88-c-k-c0x00ffffff-no-rj-mo"
+                      src="https://yt3.ggpht.com/yti/AHXOFjWCLnuPczLwfMPR6Q5AeLSgle5MXA-X60kI9QDLRg=s88-c-k-c0x00ffffff-no-rj-mo"
                     >
-                    <div class="text-white text-[14px] ml-1.5 font-semibold">John Weeks Dev</div>
+                    <div class="text-white text-[14px] ml-1.5 font-semibold">Akumu Jey</div>
                     <ChevronDown v-if="!openMenu" @click="openMenu = true" fillColor="#FFFFFF" :size="25" />
                     <ChevronUp v-else @click="openMenu = false" fillColor="#FFFFFF" :size="25" />
                 </div>

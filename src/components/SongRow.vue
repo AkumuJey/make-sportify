@@ -61,12 +61,19 @@ onMounted(() => {
             </div>
             <div>
                 <div
-                    :class="{'text-green-500': currentTrack && currentTrack.name === track.name}"
+                    :class="[
+                        'currentTrack && currentTrack.name === track.name' ? 'text-green-500': ''
+                    ]"
                     class="text-white font-semibold"
                 >
                     {{ track.name }}
                 </div>
-                <div class="text-sm font-semibold text-gray-400">{{ artist.name }}</div>
+                <div 
+                    class="text-sm font-semibold text-gray-400"
+                    :class="{'text-green-500': currentTrack && currentTrack.name === track.name}"
+                > 
+                    {{ artist.name }}
+                </div>
             </div>
         </div>
         <div class="flex items-center">
