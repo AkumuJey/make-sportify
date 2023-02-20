@@ -90,7 +90,19 @@ watch(() => isTrackTimeCurrent.value, (time) => {
     id="MusicPlayer"
     v-if="audio"
     class="fixed flex items-center justify-between bottom-0 w-full z-50 h-24 bg-[#181818] border-t border-t-[#272727]" 
-  ></div>
+  >
+    <div class="flex items-center w-1/4">
+        <div class="flext items-center ml4">
+            <img class="rounded-sm shadow-xl" width="55" :src="currentArtist.albumCover" :alt="currentTrack.name">
+            <div class="text-sm text-white hover:underline cursor-pointer">
+                {{ currentTrack.name }}
+            </div>
+            <div class="text-xs text-gray-400 hover:underline cursor-pointer">
+                {{ currentTrack.name }}
+            </div>
+        </div>
+    </div>
+  </div>
 </template>
 
 
