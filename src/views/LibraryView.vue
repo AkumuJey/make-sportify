@@ -13,7 +13,7 @@ import { storeToRefs } from 'pinia'
 
 const useSong = useSongStore()
 
-const { isplaying, currentTrack, currentArtist } = storeToRefs(useSong)
+const { isPlaying, currentTrack, currentArtist } = storeToRefs(useSong)
 
 const playfunc = () => {
     if (currentTrack.value) {
@@ -53,7 +53,7 @@ const playfunc = () => {
                     </div>
                     <div class="absolute flex gap-4 items-center justify-start bottom-0 mb-1.5">
                         <button type="button" class="p-1 rounded-full bg-white" @click="playfunc()">
-                            <Play v-if="!isplaying" fillColor="#1818181" :size="25"/>
+                            <Play v-if="!isPlaying" fillColor="#1818181" :size="25"/>
                             <Pause v-else fillColor="#1818181" :size="25"/>
                         </button>
                         <button type="button">

@@ -61,10 +61,8 @@ onMounted(() => {
             </div>
             <div>
                 <div
-                    :class="[
-                        'currentTrack && currentTrack.name === track.name' ? 'text-green-500': ''
-                    ]"
                     class="text-white font-semibold"
+                    :class="{'text-green-500': currentTrack && currentTrack.name === track.name}"
                 >
                     {{ track.name }}
                 </div>
