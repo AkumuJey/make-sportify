@@ -26,17 +26,17 @@ watchEffect(() => {
     }
 })
 
+
 const isHover = () => {
-    if (icon.value == iconString.value + '-active') return
-    if (icon.value == iconString.value + '-inactive') {
-        icon.value == iconString.value + '-inactive-hover'
+    if (icon.value === iconString.value + '-active') return
+    if (icon.value === iconString.value + '-inactive') {
+        icon.value = iconString.value + '-inactive-hover'
         textIsHover.value = true
-    } else {
-        icon.value == iconString.value + '-inactive'
+    } else if (icon.value === iconString.value + '-inactive-hover') {
+        icon.value = iconString.value + '-inactive'
         textIsHover.value = false
     }
 }
-
 </script>
 
 <template>
